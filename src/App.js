@@ -34,6 +34,13 @@ class App extends Component {
     });
   };
 
+  setDefault = () => {
+    this.setState({
+      color: "tomato",
+      fontSize: 12,
+    });
+  };
+
   render() {
     return (
       <div className="container mt-5">
@@ -49,7 +56,7 @@ class App extends Component {
               fontSize={this.state.fontSize}
               changeSize={this.changeSize}
             />
-            <Reset />
+            <Reset setDefault={this.setDefault} />
           </div>
         </div>
         <div className="row">
