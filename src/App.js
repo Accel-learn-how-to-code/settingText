@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 //add boostrap and JQuery
@@ -9,66 +8,43 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.name = React.createRef();
-  }
-
-  logTest = () => {
-    console.log(this.name.value);
-  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload 2.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <form>
-            <div className="form-group">
-              <label>Test</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Example label"
-                ref={(value) => (this.name = value)}
-              />
+      <div className="container mt-5">
+        <div className="row mb-3">
+          <div className="col-6">
+            <div className="card">
+              <div className="card-header">Color Picker</div>
+              <div className="card-body">
+                <blockquote className="blockquote mb-0">
+                  <footer className="blockquote-footer"></footer>
+                </blockquote>
+              </div>
             </div>
-          </form>
-
-          <div className="btn-group" role="group" aria-label="Basic example">
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={this.logTest}
-            >
-              Button 1
-            </button>
-            <button
-              className="btn btn-danger"
-              type="button"
-              onClick={this.logTest}
-            >
-              Button 2
-            </button>
-            <button
-              className="btn btn-success"
-              type="button"
-              onClick={this.logTest}
-            >
-              Button 3
-            </button>
           </div>
-        </header>
+          <div className="col-6">
+            <div className="card mb-1">
+              <div className="card-header">Change Fontsize</div>
+              <div className="card-body">
+                <div className="btn-group" role="group" aria-label="Basic example">
+                  <button className="btn btn-primary" type="button">Increase</button>
+                  <button className="btn btn-primary ml-1" type="button">Decrease</button>
+                </div>
+              </div>
+            </div>
+            <button className="btn btn-success ml-7" type="button">Reset</button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <div className="card">
+              <div className="card-header">Result</div>
+              <div className="card-body">
+                <div>This is the result</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
