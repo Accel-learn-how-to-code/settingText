@@ -17,12 +17,20 @@ class App extends Component {
     super(props);
     this.state = {
       color: "tomato",
+      fontSize: 12,
     };
   }
 
   changeColor = (color) => {
     this.setState({
       color: color,
+    });
+  };
+
+  changeSize = (size) => {
+    const newSize = this.state.fontSize + size;
+    this.setState({
+      fontSize: newSize >= 8 && newSize <= 32 ? newSize : this.state.fontSize,
     });
   };
 
@@ -37,13 +45,16 @@ class App extends Component {
             />
           </div>
           <div className="col-6">
-            <SizeSetting />
+            <SizeSetting
+              fontSize={this.state.fontSize}
+              changeSize={this.changeSize}
+            />
             <Reset />
           </div>
         </div>
         <div className="row">
           <div className="col-12">
-            <Result color={this.state.color} />
+            <Result color={this.state.color} fontSize={this.state.fontSize} />
           </div>
         </div>
       </div>
